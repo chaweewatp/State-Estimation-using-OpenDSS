@@ -27,10 +27,10 @@ New EnergyMeter.mysensor Element=Line.Line3 Terminal=1
 
 
 !//......Load Code......\
-New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 Kva=160 PF=0.8 
-New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415 kva=160 PF=0.8
-New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 Kva=160 PF=0.8
-New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 kva=160 PF=0.8
+New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 xfKva=360 PF=0.8 
+New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
+New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 xfKva=360 PF=0.8
+New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
 New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 kva=90 PF=0.8
 
 
@@ -43,8 +43,8 @@ EnergyMeter.mysensor.PeakCurrent=[318.98, 324.08, 325.3]
 Set Voltagebases=(11 0.415)
 Calcvoltagebases
 
-AllocateLoads
-
+!AllocateLoads
+Estimate
 Show Voltage LN Nodes
 
 

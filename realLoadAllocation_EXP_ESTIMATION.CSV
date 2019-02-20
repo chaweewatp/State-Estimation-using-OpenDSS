@@ -1,0 +1,7 @@
+"Energy Meters" 
+"energyMeter", "I1 Target", "I2 Target", "I3 Target", "I1 Calc", "I2 Calc", "I3 Calc", "I1 %Err", "I2 %Err", "I3 %Err"
+"Energymeter.MM1", 546.91, 553.77, 555.28, 880.003, 899.871, 900.85, -60.9045, -62.499, -62.2334
+"Energymeter.MYSENSOR", 318.98, 324.08, 325.3, 467.073, 481.006, 482.218, -46.4271, -48.4219, -48.238
+
+"Sensors" 
+"Sensor", "I1 Target", "I2 Target", "I3 Target", "I1 Calc", "I2 Calc", "I3 Calc", "I1 %Err", "I2 %Err", "I3 %Err", "V1 Target", "V2 Target", "V3 Target", "V1 Calc", "V2 Calc", "V3 Calc", "V1 %Err", "V2 %Err", "V3 %Err", "WLS Voltage Err", "WLS Current Err"
