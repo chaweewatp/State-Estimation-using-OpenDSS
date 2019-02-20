@@ -1,0 +1,155 @@
+Clear 
+Set DefaultBaseFrequency=60 
+!14 bus transmission system
+new circuit.14bus basekv=69 pu=1.06 phases=3 bus1=SourceBus Angle=0 MVASC3=210000
+
+! LINE DEFINITIONS 
+New Line.1 Phases=3 Bus1=2 Bus2=5 R1=2.7114 X1=8.2784 B1=0.0007 
+New Line.2 Phases=3 Bus1=7 Bus2=9 X1=0.2095 
+New Line.3 Phases=3 Bus1=SourceBus Bus2=2 R1=0.9227 X1=2.8171 B1=0.0011 
+New Line.5 Phases=3 Bus1=3 Bus2=2 R1=2.2372 X1=9.4254 B1=0.00091
+New Line.6 Phases=3 Bus1=3 Bus2=4 R1=3.1903 X1=8.1427 B1=0.00073
+New Line.7 Phases=3 Bus1=SourceBus Bus2=5 R1=2.5724 X1=10.6189 B1=0.00103 
+New Line.8 Phases=3 Bus1=5 Bus2=4 R1=0.6356 X1=2.0049 B1=0.000269
+New Line.9 Phases=3 Bus1=2 Bus2=4 R1=2.7666 X1=8.3946 B1=0.000786 
+New Line.10 Phases=3 Bus1=6 Bus2=12 R1=0.2341 X1=0.4872 
+New Line.11 Phases=3 Bus1=12 Bus2=13 R1=0.4207 X1=0.3807
+New Line.12 Phases=3 Bus1=6 Bus2=13 R1=0.1260 X1=0.2481
+New Line.13 Phases=3 Bus1=6 Bus2=11 R1=0.1809 X1=0.3788
+New Line.14 Phases=3 Bus1=11 Bus2=10 R1=0.1563 X1=0.3658 
+New Line.15 Phases=3 Bus1=9 Bus2=10 R1=0.0606 X1=0.1609 
+New Line.16 Phases=3 Bus1=9 Bus2=14 R1=0.2421 X1=0.5149
+New Line.17 Phases=3 Bus1=14 Bus2=13 R1=0.3255 X1=0.6628
+
+!Transmission system TRANSFORMER DEFINITION 
+New Transformer.t2 Phases=3 Windings=2 XHL=25.2020 tap=0.932
+~ wdg=1 bus=5 kv=69 kva=100000 
+~ wdg=2 bus=6 kv=13.8 kva=100000
+
+New Transformer.t3 Phases=3 Windings=2 XHL=55.6180 tap=0.969
+~ wdg=1 bus=4 kv=69 kva=100000 
+~ wdg=2 bus=9 kv=13.8 kva=100000
+
+New Transformer.t4 Phases=3 Windings=2 XHL=20.9120 tap=0.978
+~ wdg=1 bus=4 kv=69 kva=100000 
+~ wdg=2 bus=7 kv=13.8 kva=100000
+
+New Transformer.t5 Phases=3 Windings=2 XHL=17.6150 tap=0.98
+~ wdg=1 bus=8 kv=18 kva=100000 
+~ wdg=2 bus=7 kv=13.8 kva=100000
+
+!transmission system LOAD DEFINITIONS 
+!New Load.2 Bus1=2 Phases=3 Model=1 kV=69 kW=21700 kvar=12700 Vmaxpu=1.2 Vminpu=0.8
+!New Load.3 Bus1=3 Phases=3 Model=1 kV=69 kW=94200 kvar=19000 Vmaxpu=1.2 Vminpu=0.8
+!New Load.4 Bus1=4 Phases=3 Model=1 kV=69 kW=47800 kvar=-3900 Vmaxpu=1.2 Vminpu=0.8
+!New Load.5 Bus1=5 Phases=3 Model=1 kV=69 kW=7600 kvar=1600 Vmaxpu=1.2 Vminpu=0.8
+!New Load.6 Bus1=6 Phases=3 Model=1 kV=13.8 kW=11200 kvar=7500 Vmaxpu=1.2 Vminpu=0.8
+!New Load.9 Bus1=9 Phases=3 Model=1 kV=13.8 kW=29500 kvar=16600 Vmaxpu=1.2 Vminpu=0.8
+!New Load.10 Bus1=10 Phases=3 Model=1 kV=13.8 kW=9000 kvar=5800 Vmaxpu=1.2 Vminpu=0.8
+!New Load.11 Bus1=11 Phases=3 Model=1 kV=13.8 kW=3500 kvar=1800 Vmaxpu=1.2 Vminpu=0.8
+!New Load.12 Bus1=12 Phases=3 Model=1 kV=13.8 kW=6100 kvar=1600 Vmaxpu=1.2 Vminpu=0.8
+!New Load.13 Bus1=13 Phases=3 Model=1 kV=13.8 kW=13500 kvar=5800 Vmaxpu=1.2 Vminpu=0.8
+!New Load.14 Bus1=14 Phases=3 Model=1 kV=13.8 kW=14900 kvar=5000 Vmaxpu=1.2 Vminpu=0.8
+
+New Load.2 Bus1=2 Phases=3 Model=1  xfKva=25143.2   !PF=0.86
+New Load.3 Bus1=3 Phases=3 Model=1  xfKva=96097   !PF=0.98
+New Load.4 Bus1=4 Phases=3 Model=1  xfKva=47958.8  ! PF=1
+New Load.5 Bus1=5 Phases=3 Model=1  xfKva=7766.6  ! PF=0.98
+New Load.6 Bus1=6 Phases=3 Model=1  xfKva=13479.2  ! PF=0.8
+New Load.9 Bus1=9 Phases=3 Model=1  xfKva=33849.8  ! PF=0.87
+New Load.10 Bus1=10 Phases=3 Model=1  xfKva=10707.0   !PF=0.84
+New Load.11 Bus1=11 Phases=3 Model=1  xfKva=3935.7   !PF=0.89
+New Load.12 Bus1=12 Phases=3 Model=1  xfKva=6306.3  ! PF=0.97
+New Load.13 Bus1=13 Phases=3 Model=1  xfKva=14693.2   !PF=0.92
+New Load.14 Bus1=14 Phases=3 Model=1  xfKva=15716.6  ! PF=0.95
+
+
+
+//..........Code For Sensor...\\
+New Sensor.line1  Element=Line.1 Terminal=1 kvbase=69
+New Sensor.line2  Element=Line.2 Terminal=1 kvbase=13.8
+New Sensor.line3  Element=Line.3 Terminal=1 kvbase=69
+New Sensor.line5  Element=Line.5 Terminal=1 kvbase=69
+New Sensor.line6  Element=Line.6 Terminal=1 kvbase=69
+New Sensor.line7  Element=Line.7 Terminal=1 kvbase=69
+New Sensor.line8  Element=Line.8 Terminal=1 kvbase=69
+New Sensor.line9  Element=Line.9 Terminal=1 kvbase=69
+New Sensor.line10  Element=Line.10 Terminal=1 kvbase=13.8
+New Sensor.line11  Element=Line.11 Terminal=1 kvbase=13.8
+New Sensor.line12  Element=Line.12 Terminal=1 kvbase=13.8
+New Sensor.line13  Element=Line.13 Terminal=1 kvbase=13.8
+New Sensor.line14  Element=Line.14 Terminal=1 kvbase=13.8
+New Sensor.line15  Element=Line.15 Terminal=1 kvbase=13.8
+New Sensor.line16  Element=Line.16 Terminal=1 kvbase=13.8
+New Sensor.line17 Element=Line.17 Terminal=1 kvbase=13.8
+
+!Sensor.line1.kWs=[13156.8 13156.8   13156.8]
+!Sensor.line1.kvars=[5538.2 5538.2 5538.2]
+!Sensor.line2.kWs=[9241.7  9241.7  9241.7]
+!Sensor.line2.kvars=[3869.7 3869.7 3869.7]
+!Sensor.line3.kWs=[65613.1  65613.1  65613.1]
+!Sensor.line2.kvars=[35647.9 35647.9 35647.9]
+!Sensor.line5.kWs=[-22990.2  -22990.2  -22990.2]
+!Sensor.line5.kvars=[-5969.3 -5969.3 -5969.3]
+!Sensor.line6.kWs=[-8407.0  -8407.0  -8407.0]
+!Sensor.line6.kvars=[-363.2 -363.2 -363.2]
+!Sensor.line7.kWs=[27467.1 27467.1  27467.1]
+!Sensor.line7.kvars=[17775.7 17775.7 17775.7]
+!Sensor.line8.kWs=[21500.2 21500.2  21500.2]
+!Sensor.line8.kvars=[4041.0 4041.0 4041.0]
+!Sensor.line9.kWs=[18313.5 18313.5 18313.5 ]
+!Sensor.line9.kvars=[6747.2 6747.2 6747.2]
+!Sensor.line10.kWs=[2659.6  2659.6  2659.6]
+!Sensor.line10.kvars=[991.5 991.5 991.5]
+!Sensor.line11.kWs=[590.0  590.0 590.0]
+!Sensor.line11.kvars=[382.4 382.4 382.4]
+!Sensor.line12.kWs=[6045.6 6045.6 6045.6]
+!Sensor.line12.kvars=[3013.1 3013.1 3013.1]
+!Sensor.line13.kWs=[2191.1 2191.1 2191.1]
+!Sensor.line13.kvars=[2045.8 2045.8 2045.8]
+!Sensor.line14.kWs=[1666.5 1666.5 1666.5]
+!Sensor.line14.kvars=[1713.8 1713.8 1713.8]
+!Sensor.line15.kWs=[1353.6 1353.6 1353.6 ]
+!Sensor.line15.kvars=[267.8 267.8 267.8]
+!Sensor.line16.kWs=[3031.1 3031.1 3031.1]
+!Sensor.line16.kvars=[605.8 605.8 605.8]
+!Sensor.line17.kWs=[-1983.2 -1983.2 -1983.2]
+!Sensor.line17.kvars=[-1163.3 -1163.3 -1163.3]
+
+Sensor.line1.currents=[370.39 370.39 370.39]
+Sensor.line2.currents=[1410.7 1410.7  1410.7]
+Sensor.line3.currents=[1770  1770   1770]
+Sensor.line5.currents=[678.14 678.14 678.14 ]
+Sensor.line6.currents=[240.24 240.24 240.24 ]
+Sensor.line7.currents=[775.52 775.52 775.52 ]
+Sensor.line8.currents=[599.25 599.25 599.25 ]
+Sensor.line9.currents=[506.4 506.4 506.4]
+Sensor.line10.currents=[394.9 394.9 394.9]
+Sensor.line11.currents=[99.937 99.937 99.937]
+Sensor.line12.currents=[939.79 939.79 939.79 ]
+Sensor.line13.currents=[417.06 417.06 417.06]
+Sensor.line14.currents=[340.29 340.29  340.29]
+Sensor.line15.currents=[199.49 199.49 199.49 ]
+Sensor.line16.currents=[446.89 446.89 446.89 ]
+Sensor.line17.currents=[339.68 339.68 339.68 ]
+
+
+
+
+
+
+
+
+
+Sensor.line3.kVs=[73.071 73.071   73.071]
+Sensor.line1.kVs=[66.754 66.754   66.754]
+Sensor.line17.kVs=[11.724 11.724   11.724]
+
+Set Voltagebases=[69, 18, 13.8]
+CalcVoltageBases
+
+AllocateLoads
+!Show Voltage LN Nodes
+Estimate
+!Export Estimation
+Show Powers kVA Elem

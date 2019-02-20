@@ -39,17 +39,19 @@ New Transformer.t5 Phases=3 Windings=2 XHL=17.6150 tap=0.98
 ~ wdg=2 bus=7 kv=13.8 kva=100000
 
 !transmission system LOAD DEFINITIONS 
-New Load.11 Bus1=11 Phases=3 Model=1 kV=13.8 kW=4900 kvar=2520 Vmaxpu=1.2 Vminpu=0.8
-New Load.13 Bus1=13 Phases=3 Model=1 kV=13.8 kW=18900 kvar=8120 Vmaxpu=1.2 Vminpu=0.8
-New Load.3 Bus1=3 Phases=3 Model=1 kV=69 kW=131880 kvar=26600 Vmaxpu=1.2 Vminpu=0.8
-New Load.5 Bus1=5 Phases=3 Model=1 kV=69 kW=10640 kvar=2240 Vmaxpu=1.2 Vminpu=0.8
-New Load.2 Bus1=2 Phases=3 Model=1 kV=69 kW=30380 kvar=17780 Vmaxpu=1.2 Vminpu=0.8
-New Load.6 Bus1=6 Phases=3 Model=1 kV=13.8 kW=15680 kvar=10500 Vmaxpu=1.2 Vminpu=0.8
-New Load.4 Bus1=4 Phases=3 Model=1 kV=69 kW=66920 kvar=5600 Vmaxpu=1.2 Vminpu=0.8
-New Load.14 Bus1=14 Phases=3 Model=1 kV=13.8 kW=20860 kvar=7000 Vmaxpu=1.2 Vminpu=0.8
-New Load.12 Bus1=12 Phases=3 Model=1 kV=13.8 kW=8540 kvar=2240 Vmaxpu=1.2 Vminpu=0.8
-New Load.9 Bus1=9 Phases=3 Model=1 kV=13.8 kW=41300 kvar=23240 Vmaxpu=1.2 Vminpu=0.8
-New Load.10 Bus1=10 Phases=3 Model=1 kV=13.8 kW=3570 kvar=1730 Vmaxpu=1.2 Vminpu=0.8
+!New Load.11 Bus1=11 Phases=3 Model=1 kV=13.8 kW=3500 kvar=1800 Vmaxpu=1.2 Vminpu=0.8
+New Load.11 Bus1=11 Phases=3 Model=1 kV=13.8 xfKva=3935.7   
+
+New Load.13 Bus1=13 Phases=3 Model=1 kV=13.8 kW=13500 kvar=5800 Vmaxpu=1.2 Vminpu=0.8
+New Load.3 Bus1=3 Phases=3 Model=1 kV=69 kW=94200 kvar=19000 Vmaxpu=1.2 Vminpu=0.8
+New Load.5 Bus1=5 Phases=3 Model=1 kV=69 kW=7600 kvar=1600 Vmaxpu=1.2 Vminpu=0.8
+New Load.2 Bus1=2 Phases=3 Model=1 kV=69 kW=21700 kvar=12700 Vmaxpu=1.2 Vminpu=0.8
+New Load.6 Bus1=6 Phases=3 Model=1 kV=13.8 kW=11200 kvar=7500 Vmaxpu=1.2 Vminpu=0.8
+New Load.4 Bus1=4 Phases=3 Model=1 kV=69 kW=47800 kvar=-3900 Vmaxpu=1.2 Vminpu=0.8
+New Load.14 Bus1=14 Phases=3 Model=1 kV=13.8 kW=14900 kvar=5000 Vmaxpu=1.2 Vminpu=0.8
+New Load.12 Bus1=12 Phases=3 Model=1 kV=13.8 kW=6100 kvar=1600 Vmaxpu=1.2 Vminpu=0.8
+New Load.9 Bus1=9 Phases=3 Model=1 kV=13.8 kW=29500 kvar=16600 Vmaxpu=1.2 Vminpu=0.8
+New Load.10 Bus1=10 Phases=3 Model=1 kV=13.8 kW=9000 kvar=5800 Vmaxpu=1.2 Vminpu=0.8
 
 !transmission system generator DEFINITIONS 
 !New Generator.2 Bus1=2 kV=69 kW=40000 MVA=100 Model=3 Vpu=1.045 Maxkvar=50000 Minkvar=-40000 Vmaxpu=1.2 Vminpu=0.8
@@ -62,6 +64,8 @@ CalcVoltageBases
 
 Solve
 Show Voltage LN Nodes
+Show Powers kVA Elem
+Show Currents Elem
 
-Export Voltages FileVabc14_end.CSV
-Export Currents FileIabc14_end.CSV
+!Export Voltages FileVabc14_end.CSV
+!Export Currents FileIabc14_end.CSV

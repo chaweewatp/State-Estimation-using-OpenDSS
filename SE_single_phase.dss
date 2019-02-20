@@ -23,8 +23,10 @@ New Line.line5 Phases=4 Bus1=E.1.2.3.0 Bus2=F.1.2.3.0 Length=50 units=m Linecode
 
 //..........Code For EnergyMater...\
 
-New Sensor.mysensor1  Element=Line.Line1 Terminal=1
-New Sensor.mysensor2  Element=Line.Line3 Terminal=1 
+New Sensor.mysensor1  Element=Line.line1 Terminal=1
+New Sensor.mysensor2  Element=Line.line2 Terminal=1
+
+New Sensor.mysensor3  Element=Line.line3 Terminal=1 
 
 
 !//......Load Code......\
@@ -32,20 +34,26 @@ New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 xfKva=360 PF=0.8
 New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
 New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 xfKva=360 PF=0.8
 New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
-New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 kva=90 PF=0.8
+New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 xfkva=90 PF=0.8
 
 
-Sensor.mysensor1.currents=[546.91, 553.77, 555.28]
-Sensor.mysensor2.currents=[318.98, 324.08, 325.3]
+!Sensor.mysensor1.currents=[546.91, 553.77, 555.28]
+!Sensor.mysensor3.currents=[318.98, 324.08, 325.3]
+
+
+Sensor.mysensor1.currents=[1018.9, 1045.1, 1045.1]
+Sensor.mysensor2.currents=[760.25, 783.57, 784.2]
+Sensor.mysensor3.currents=[524.73, 542.8, 543.59]
 
 Set Voltagebases=(11 0.415)
 Calcvoltagebases
 
 AllocateLoads
 
-!Estimate
+Estimate
+Export Estimation
 !Show Voltage LN Nodes
-Show Currents Elem
+!Show Currents Elem
 Show Powers kVA Elem
 !Show Losses
 !Show Taps
