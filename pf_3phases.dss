@@ -1,0 +1,36 @@
+//.................Real Power flow...................\
+
+Clear
+
+//..........Load Allocation Code.............\
+! This code is used to understand how openDss Load Allocation Works
+New Circuit.realLoadAllocation
+Edit Vsource.source phases=3 bus1=sourcebus basekv=11 baseMVA=1 MVAsc3=300000 MVAsc1=100000 Angle=0 r1=0 x1=0.001 r0=0 x0=0.001
+New Transformer.Substation phase=3 windings=2 buses=(sourcebus A.1.2.3.0) conns=(delta wye) kvas=(500 500) kvs=(11 0.415) xhl=4.0
+
+!............Linecode code..........!
+New Linecode.lcode1 nphases=4 basefreq=50 units=km
+~ Rmatrix=[0.19 | 0.06 0.19 | 0.06 0.06 0.19 | 0.02 0.02 0.02 0.19]
+~ Xmatrix=[0.86 | 0.49 0.86 | 0.44 0.49 0.86 | 0.12 0.12 0.12 0.86]
+~ Cmatrix=[0.001 | 0.0001 0.001| 0.0001 0.0001 0.001| 0.0001 0.0001 0.0001 0.001]
+
+!......................Line Code.....................!
+New Line.line1 Phases=4 Bus1=A.1.2.3.0 Bus2=B.1.2.3.0 Length=50 units=m Linecode=lcode1
+New Line.line2 phases=4 Bus1=B.1.2.3.0 Bus2=C.1.2.3.0 Length=50 units=m Linecode=lcode1
+New Line.line3 Phases=4 Bus1=C.1.2.3.0 Bus2=D.1.2.3.0 Length=50 units=m Linecode=lcode1
+New Line.line4 Phases=4 Bus1=D.1.2.3.0 Bus2=E.1.2.3.0 Length=50 units=m Linecode=lcode1
+New Line.line5 Phases=4 Bus1=E.1.2.3.0 Bus2=F.1.2.3.0 Length=50 units=m Linecode=lcode1
+
+
+!//......Load Code......\
+New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 xfKva=360 PF=0.8 
+New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
+New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 xfKva=360 PF=0.8
+New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
+New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 kva=90 PF=0.8
+
+
+Set Voltagebases=(11 0.415)
+Calcvoltagebases
+solve
+Show Voltage LN Nodes
