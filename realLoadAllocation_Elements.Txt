@@ -1,0 +1,23 @@
+
+Elements in Active Circuit: realloadallocation
+
+Power Delivery Elements
+
+Element                  Bus1     Bus2     Bus3     ...
+
+"Transformer.SUBSTATION" SOURCEBUS A         
+"Line.LINE1"             A         B         
+"Line.LINE2"             B         C         
+"Line.LINE3"             C         D         
+"Line.LINE4"             D         E         
+"Line.LINE5"             E         F         
+
+Power Conversion Elements
+
+Element                  Bus1     Bus2     Bus3     ...
+
+"Load.LOAD1"             B         
+"Load.LOAD2"             C         
+"Load.LOAD3"             D         
+"Load.LOAD4"             E         
+"Load.LOAD5"             F         

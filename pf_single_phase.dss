@@ -22,11 +22,11 @@ New Line.line4 Phases=4 Bus1=D.1.2.3.0 Bus2=E.1.2.3.0 Length=50 units=m Linecode
 New Line.line5 Phases=4 Bus1=E.1.2.3.0 Bus2=F.1.2.3.0 Length=50 units=m Linecode=lcode1
 
 !//......Load Code......\
-New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 xfKva=360 PF=0.8 
-New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
-New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 xfKva=360 PF=0.8
-New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 xfkva=360 PF=0.8
-New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 kva=90 PF=0.8
+New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 model=1 kVA=40 PF=0.8 
+New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415 model=1 kVA=35 PF=0.8
+New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 model=1 kVA=30 PF=0.8
+New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 model=1 kVA=20 PF=0.8
+New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 model=1 kva=15 PF=0.8
 
 
 
@@ -34,7 +34,8 @@ Set Voltagebases=(11 0.415)
 Calcvoltagebases
 solve
 !Show Voltage LN Nodes
-!Show Currents Elem
-Show Powers kVA Elem
+Show Currents Elem
+!Show Powers kVA Elem
 !Show Losses
 !Show Taps
+Show elements
