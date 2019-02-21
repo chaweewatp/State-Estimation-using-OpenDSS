@@ -28,14 +28,13 @@ New Sensor.mysensor2 Element=Line.line2 Terminal=1
 New Sensor.mysensor3 Element=Line.line3 Terminal=1
 
 !//......Load Code......\
-New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 xfkva=40 PF=0.8 
-New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415  xfkva=35 PF=0.8 
-New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 xfKva=30 PF=0.8 
-New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 xfkva=20 PF=0.8 
-New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 xfkva=15 PF=0.8 
+New Load.Load1 phases=3 Bus=B.1.2.3.0 kv=0.415 xfkva=50 PF=0.8 
+New Load.Load2 phases=3 Bus=C.1.2.3.0 kv=0.415  xfkva=40 PF=0.8 
+New Load.Load3 Phases=3 Bus=D.1.2.3.0 kv=0.415 xfKva=35 PF=0.8 
+New Load.Load4 Phases=3 Bus=E.1.2.3.0 kv=0.415 xfkva=25 PF=0.8 
+New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 kva=15 PF=0.8
 
-Set Voltagebases=(11 0.415)
-Calcvoltagebases
+
 !solve
 
 
@@ -43,10 +42,13 @@ EnergyMeter.mymeter1.peakcurrent=[202.76, 202.1, 201.83]
 Sensor.mysensor2.clear=Yes current=[145.59, 145.1, 144.87]
 Sensor.mysensor3.clear=Yes current=[94.884, 94.651, 94.487]
 
+Set Voltagebases=(11 0.415)
+Calcvoltagebases
 
 Set NumAllocIterations=4
 
 
+Allocateloads
 Allocateloads
 Allocateloads
 
