@@ -33,7 +33,7 @@ New Load.Load5 Phases=3 Bus=F.1.2.3.0 kv=0.415 model=1 kva=15 PF=0.8
 Set Voltagebases=(11 0.415)
 Calcvoltagebases
 solve
-!Show Voltage LN Nodes
+Show Voltage LN Nodes
 Show Currents Elem
 !Show Powers kVA Elem
 !Show Losses
