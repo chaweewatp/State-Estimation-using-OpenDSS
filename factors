@@ -1,3 +1,4 @@
-Load.load2.AllocationFactor=0.66335
-Load.load3.AllocationFactor=0.57364
-Load.load4.AllocationFactor=0.57364
+Load.load1.AllocationFactor=0.75278
+Load.load2.AllocationFactor=0.66728
+Load.load3.AllocationFactor=0.6535
+Load.load4.AllocationFactor=0.46691

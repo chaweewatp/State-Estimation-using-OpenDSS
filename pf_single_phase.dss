@@ -34,8 +34,8 @@ Set Voltagebases=(11 0.415)
 Calcvoltagebases
 solve
 Show Voltage LN Nodes
-Show Currents Elem
-!Show Powers kVA Elem
+!Show Currents Elem
+Show Powers kVA Elem
 !Show Losses
 !Show Taps
-Show elements
+!Show elements
